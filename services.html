@@ -4,43 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services - UDAI ENTERPRISES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root { --primary: #6b4c26; --bg: #fff8f0; }
-    body { font-family: 'Arial', sans-serif; background: var(--bg); margin: 0; text-align: center; }
-    header { background: var(--primary); color: white; padding: 20px; }
-    nav a { color: #fbd080; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 20px; max-width: 1100px; margin: auto; }
-    .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; border-bottom: 5px solid var(--primary); }
-    .card:hover { transform: translateY(-10px); }
-    .card h3 { color: var(--primary); margin-bottom: 15px; }
-    footer { background: var(--primary); color: white; padding: 20px; margin-top: 40px; }
+    :root { --primary: #6b4c26; --accent: #fbd080; --bg: #fff8f0; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; text-align: center; }
+    header { background: linear-gradient(135deg, var(--primary), #8b5a2b); color: white; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    nav a { color: var(--accent); margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+    
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 20px; max-width: 1200px; margin: auto; }
+    
+    .card { background: white; padding: 40px 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 6px solid var(--primary); transition: 0.4s; position: relative; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+    
+    .card h3 { color: var(--primary); font-size: 1.6em; margin-bottom: 15px; }
+    .card p { color: #666; font-size: 1em; line-height: 1.6; margin-bottom: 25px; }
+
+    /* Connecting Button */
+    .view-gallery-btn { 
+        background: transparent; 
+        color: var(--primary); 
+        border: 2px solid var(--primary); 
+        padding: 10px 20px; 
+        text-decoration: none; 
+        border-radius: 50px; 
+        font-weight: bold; 
+        font-size: 0.9em;
+        transition: 0.3s;
+    }
+    .view-gallery-btn:hover { background: var(--primary); color: white; }
+
+    footer { background: var(--primary); color: white; padding: 30px; margin-top: 50px; }
   </style>
 </head>
 <body>
+
   <header>
     <h1>UDAI ENTERPRISES</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
+      <a href="services.html" style="color:white; border-bottom: 2px solid white;">Services</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-  <h2>Our Professional Services</h2>
-  <div class="grid">
+
+  <h2 style="margin-top: 50px; color: var(--primary); font-size: 2.5em;">Our Expert Services</h2>
+  
+  <div class="services-grid">
     <div class="card">
       <h3>CNC Cutting</h3>
-      <p>Precision carving on WPC, MDF, and PVC sheets.</p>
+      <p>Precision cutting on MDF, WPC, PVC and ACP sheets with latest machinery.</p>
+      <a href="gallery.html" class="view-gallery-btn">View CNC Designs →</a>
     </div>
+
     <div class="card">
-      <h3>3D Door Designs</h3>
-      <p>Exclusive 3D wooden designs for main doors.</p>
+      <h3>3D Door Carving</h3>
+      <p>High-quality 3D wood carving for main doors, puja rooms, and luxury interiors.</p>
+      <a href="gallery.html" class="view-gallery-btn">View Door Designs →</a>
     </div>
+
     <div class="card">
-      <h3>Custom Jaali</h3>
-      <p>Beautiful partitions and mandir jaali work.</p>
+      <h3>Designer Jaali</h3>
+      <p>Customized jaali work for partitions, ceilings, and decorative panels.</p>
+      <a href="gallery.html" class="view-gallery-btn">View Jaali Gallery →</a>
     </div>
   </div>
-  <footer><p>Contact: 8726090909</p></footer>
+
+  <footer>
+    <p>180, Indrapuri Bhuwana, Udaipur | 8726090909</p>
+  </footer>
+
 </body>
 </html>
