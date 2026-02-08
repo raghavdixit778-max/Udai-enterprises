@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery - UDAI ENTERPRISES</title>
+  <style>
+    body { font-family: 'Arial', sans-serif; background: #fff8f0; margin: 0; text-align: center; }
+    header { background: #6b4c26; color: white; padding: 20px; }
+    nav a { color: #fbd080; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; padding: 20px; max-width: 1200px; margin: auto; }
+    .img-box { overflow: hidden; border-radius: 10px; height: 250px; border: 5px solid white; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+    .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+    .img-box:hover img { transform: scale(1.1); filter: brightness(0.8); }
+    footer { background: #6b4c26; color: white; padding: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UDAI ENTERPRISES</h1>
+    <nav><a href="index.html">Home</a> <a href="gallery.html">Gallery</a> <a href="contact.html">Contact</a></nav>
+  </header>
+  <h2>Our Recent Projects</h2>
+  <div class="gallery-grid">
+    <div class="img-box"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" alt="CNC"></div>
+    <div class="img-box"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Wood"></div>
+    <div class="img-box"><img src="https://images.unsplash.com/photo-1615873968403-89e068629265" alt="Design"></div>
+  </div>
+  <footer><p>Udaipur, Rajasthan</p></footer>
+</body>
+</html>
