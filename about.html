@@ -3,41 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UDAI ENTERPRISES - About</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>About Us - UDAI ENTERPRISES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    /* Shared CSS */
-    body { font-family: 'Roboto', 'Arial', sans-serif; margin: 0; padding: 0; background-color: #fff8f0; color: #5a3e1b; line-height: 1.6; }
-    header { background: linear-gradient(135deg, #6b4c26, #8b5a2b); color: white; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-    header h1 { margin: 0; font-size: 2.5em; }
-    nav a { color: #fbd080; margin: 0 15px; text-decoration: none; font-weight: bold; transition: color 0.3s; }
-    nav a:hover { color: #fff; }
-    .section { padding: 60px 20px; max-width: 900px; margin: auto; }
-    .section h2 { text-align: center; color: #6b4c26; margin-bottom: 30px; font-size: 2.5em; }
-    footer { background: #6b4c26; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-    @media (max-width: 768px) { .section h2 { font-size: 2em; } nav a { display: block; margin: 10px 0; } }
+    :root { --primary: #6b4c26; --secondary: #8b5a2b; --accent: #fbd080; --bg: #fff8f0; }
+    body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg); color: #333; line-height: 1.8; }
+    
+    header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 25px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    nav a { color: var(--accent); margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9em; transition: 0.3s; }
+    nav a:hover { color: white; }
+
+    .about-container { max-width: 1000px; margin: 50px auto; padding: 20px; text-align: center; }
+    .about-header h2 { font-size: 3em; color: var(--primary); margin-bottom: 20px; }
+    .about-header p { font-size: 1.2em; color: #666; max-width: 800px; margin: auto; }
+
+    /* Features Section */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+    .feature-box { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-top: 5px solid var(--primary); }
+    .feature-box:hover { transform: translateY(-10px); }
+    .feature-box h3 { color: var(--primary); margin-bottom: 15px; }
+
+    /* Story Section */
+    .story-section { background: white; padding: 60px 20px; margin-top: 60px; border-radius: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; align-items: center; flex-wrap: wrap; text-align: left; }
+    .story-text { flex: 1; min-width: 300px; padding: 20px; }
+    .story-img { flex: 1; min-width: 300px; padding: 20px; }
+    .story-img img { width: 100%; border-radius: 20px; box-shadow: 10px 10px 0px var(--accent); }
+
+    .cta-btn { display: inline-block; margin-top: 40px; background: var(--primary); color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; }
+    .cta-btn:hover { background: var(--secondary); transform: scale(1.05); }
+
+    footer { background: var(--primary); color: white; padding: 30px; margin-top: 60px; text-align: center; }
   </style>
 </head>
 <body>
+
   <header>
     <h1>UDAI ENTERPRISES</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="about.html" style="color:white; border-bottom: 2px solid white;">About</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <section class="section">
-    <h2>About Us</h2>
-    <p>Welcome to Udai Enterprises, led by Anuj Dixit. We specialize in high-quality CNC cutting and wood carving for all your custom design needs, including WPC/PVC, MDF, ACP ply, acrylic, Corian jaali work, board cutting, and 3D door designs. Our team is dedicated to precision and craftsmanship, ensuring every project meets the highest standards.</p>
-  </section>
+  <div class="about-container">
+    <div class="about-header">
+      <h2>Crafting Excellence Since 2015</h2>
+      <p>Udaipur's leading name in precision CNC cutting and artistic wood carving. We turn your imagination into wooden reality.</p>
+    </div>
+
+    <div class="features">
+      <div class="feature-box">
+        <h3>Precision Technology</h3>
+        <p>Using the latest CNC machines to ensure every cut is accurate to the millimeter.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Premium Materials</h3>
+        <p>Expertise in working with high-grade MDF, WPC, PVC, Acrylic, and Solid Wood.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Timely Delivery</h3>
+        <p>We value your time. Every project is completed within the promised deadline.</p>
+      </div>
+    </div>
+
+    <div class="story-section">
+      <div class="story-text">
+        <h3 style="color: var(--primary); font-size: 2em;">Why Choose Us?</h3>
+        <p>At Udai Enterprises, we don't just cut wood; we create masterpieces. Located in the heart of Udaipur, we have served hundreds of homeowners and interior designers with custom Jaali work, 3D door designs, and designer ceilings.</p>
+        <p>Our goal is to provide high-quality craftsmanship at prices that are affordable. Whether it's a small nameplate or a full interior CNC project, we handle everything with passion.</p>
+      </div>
+      <div class="story-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXGASD6wWkbJO9AK8uxg2w-02s4TKNiidm4w&s" alt="CNC Workshop">
+      </div>
+    </div>
+
+    <a href="contact.html" class="cta-btn">Work With Us</a>
+  </div>
 
   <footer>
-    <p>180, Indrapuri Bhuwana, Udaipur (Opp. Rajkamal Hotel) | Phone: 8726090909</p>
-    <p>&copy; 2024 Udai Enterprises. All rights reserved.</p>
+    <p>180, Indrapuri Bhuwana, Udaipur | 8726090909</p>
+    <p>&copy; 2026 Udai Enterprises. All Rights Reserved.</p>
   </footer>
+
 </body>
 </html>
