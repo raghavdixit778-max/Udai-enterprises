@@ -4,28 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery - UDAI ENTERPRISES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Arial', sans-serif; background: #fff8f0; margin: 0; text-align: center; }
-    header { background: #6b4c26; color: white; padding: 20px; }
-    nav a { color: #fbd080; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; padding: 20px; max-width: 1200px; margin: auto; }
-    .img-box { overflow: hidden; border-radius: 10px; height: 250px; border: 5px solid white; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
-    .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
-    .img-box:hover img { transform: scale(1.1); filter: brightness(0.8); }
-    footer { background: #6b4c26; color: white; padding: 20px; }
+    :root { --primary: #6b4c26; --accent: #fbd080; --bg: #fff8f0; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; text-align: center; color: #333; }
+    
+    header { background: linear-gradient(135deg, var(--primary), #8b5a2b); color: white; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    nav { margin-top: 15px; }
+    nav a { color: var(--accent); margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9em; }
+    nav a:hover { color: white; }
+
+    .gallery-container { padding: 50px 20px; max-width: 1200px; margin: auto; }
+    .gallery-container h2 { color: var(--primary); font-size: 2.5em; margin-bottom: 40px; }
+    
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    
+    /* Image Styling */
+    .gallery-item { position: relative; overflow: hidden; border-radius: 15px; background: white; border: 8px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); height: 350px; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+    .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.7); }
+
+    /* Caption Overlay */
+    .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(107, 76, 38, 0.85); color: white; padding: 15px; transform: translateY(100%); transition: 0.4s ease; }
+    .gallery-item:hover .overlay { transform: translateY(0); }
+    .overlay h3 { margin: 0; font-size: 1.2em; color: var(--accent); }
+
+    footer { background: var(--primary); color: white; padding: 30px; margin-top: 50px; }
   </style>
 </head>
 <body>
+
   <header>
     <h1>UDAI ENTERPRISES</h1>
-    <nav><a href="index.html">Home</a> <a href="gallery.html">Gallery</a> <a href="contact.html">Contact</a></nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html" style="color:white; border-bottom: 2px solid white;">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
-  <h2>Our Recent Projects</h2>
-  <div class="gallery-grid">
-    <div class="img-box"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7" alt="CNC"></div>
-    <div class="img-box"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" alt="Wood"></div>
-    <div class="img-box"><img src="https://images.unsplash.com/photo-1615873968403-89e068629265" alt="Design"></div>
+
+  <div class="gallery-container">
+    <h2>CNC Cutting Design Showcase</h2>
+    <div class="gallery-grid">
+      
+      <div class="gallery-item">
+        <img src="https://i.pinimg.com/736x/7b/b7/6c/7bb76c890ef7d320ae91849779b9cdf1.jpg" alt="CNC Jaali Design">
+        <div class="overlay">
+          <h3>Decorative Jaali</h3>
+          <p>MDF & PVC Partition Designs</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2024/6/430843320/RD/BM/EP/6462058/mdf-3d-door-panel-2.jpeg" alt="3D Door Carving">
+        <div class="overlay">
+          <h3>3D Door Carving</h3>
+          <p>Premium Solid Wood Designs</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://5.imimg.com/data5/JZ/SX/CK/SELLER-25407571/designer-wall-panel-mdf-500x500.jpg" alt="CNC Wall Panel">
+        <div class="overlay">
+          <h3>Wall Paneling</h3>
+          <p>Modern Living Room CNC Work</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2024/10/461783843/GX/QM/FC/225711479/polywood-pvc-door-500x500.jpg" alt="Mandir Jaali">
+        <div class="overlay">
+          <h3>Temple Jaali</h3>
+          <p>Corian & Acrylic CNC Designs</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://5.imimg.com/data5/ANDROID/Default/2022/10/GU/MV/JY/4275809/product-jpeg.jpg" alt="CNC">
+        <div class="overlay">
+          <h3>Ceiling Design</h3>
+          <p>Designer False Ceiling Panels</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://i.pinimg.com/736x/f8/c4/ee/f8c4ee87ff5cea2d3489104ea9d921dd.jpg" alt="Furniture CNC">
+        <div class="overlay">
+          <h3>Furniture Art</h3>
+          <p>Custom Engraving on Cabinets</p>
+        </div>
+      </div>
+
+    </div>
   </div>
-  <footer><p>Udaipur, Rajasthan</p></footer>
+
+  <footer>
+    <p>180, Indrapuri Bhuwana, Udaipur | Phone: 8726090909</p>
+    <p>&copy; 2026 Udai Enterprises. Quality Woodwork & CNC.</p>
+  </footer>
+
 </body>
-</html>
+</html>		
