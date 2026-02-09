@@ -1,88 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - UDAI ENTERPRISES</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #6b4c26; --accent: #fbd080; --bg: #fff8f0; --whatsapp: #25d366; --gmail: #db4437; }
-    body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; text-align: center; }
-    
-    header { background: var(--primary); color: white; padding: 25px; }
-    nav a { color: var(--accent); margin: 0 15px; text-decoration: none; font-weight: bold; }
+    <meta charset="UTF-8">
+    <title>Contact | Udai Enterprises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; font-family: 'Poppins', sans-serif; background: #0a0a0a; color: white; text-align: center; }
+        
+        .hero {
+            background-image: url('https://s3.ap-south-1.amazonaws.com/images.woodenstreet.de/image/data/blog-images/cnc-cutting-design/modern-cnc-designs.jpg');
+            height: 50vh; background-attachment: fixed; background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center;
+        }
+        
+        .hero h1 { font-size: 3em; color: #fbd080; text-shadow: 0 0 10px black; background: rgba(0,0,0,0.6); padding: 20px 40px; border: 2px solid #00d4ff; }
+        
+        .contact-box {
+            max-width: 600px; margin: -50px auto 50px; background: #1a1a1a; padding: 50px; border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.2); border: 1px solid #333; position: relative;
+        }
+        
+        .btn-wa {
+            display: block; width: 100%; padding: 20px; margin: 20px 0; background: #25d366; color: white;
+            font-size: 1.5em; font-weight: bold; text-decoration: none; border-radius: 10px; transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        .btn-wa:hover { transform: scale(1.05); background: #128c7e; }
+        
+        .btn-call {
+            display: block; width: 100%; padding: 20px; margin: 20px 0; background: #00d4ff; color: #000;
+            font-size: 1.5em; font-weight: bold; text-decoration: none; border-radius: 10px; transition: 0.3s;
+        }
+        .btn-call:hover { transform: scale(1.05); background: white; box-shadow: 0 0 20px white; }
 
-    .contact-wrapper { max-width: 600px; margin: 50px auto; padding: 20px; }
-    .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    h2 { color: var(--primary); margin-bottom: 30px; }
-
-    .contact-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      color: white;
-      transition: 0.3s;
-      font-size: 1.1em;
-    }
-
-    /* WhatsApp Button */
-    .btn-wa { background-color: var(--whatsapp); }
-    .btn-wa:hover { background-color: #128c7e; transform: translateY(-3px); }
-
-    /* Email Button */
-    .btn-mail { background-color: var(--gmail); }
-    .btn-mail:hover { background-color: #c53026; transform: translateY(-3px); }
-
-    /* Google Form Button */
-    .btn-form { background-color: var(--primary); }
-    .btn-form:hover { background-color: #4e361b; transform: translateY(-3px); }
-
-    .icon-space { margin-right: 15px; font-size: 1.4em; }
-    
-    footer { background: var(--primary); color: white; padding: 20px; margin-top: 50px; }
-  </style>
+        nav { background: #000; padding: 20px; }
+        nav a { color: #fbd080; text-decoration: none; margin: 0 15px; font-weight: bold; }
+    </style>
 </head>
 <body>
-
-  <header>
-    <h1>UDAI ENTERPRISES</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="contact.html" style="color:#00d4ff;">CONTACT</a>
     </nav>
-  </header>
 
-  <div class="contact-wrapper">
-    <div class="card">
-      <h2>Get In Touch</h2>
-      <p style="color: #666; margin-bottom: 30px;">Apni query ke liye niche diye gaye kisi bhi option ko chunein.</p>
-
-      <a href="https://wa.me/918726090909?text=Hello%20Raghav!%20I%20have%20a%20CNC%20work%20enquiry." class="contact-btn btn-wa" target="_blank">
-        <span class="icon-space">💬</span> WhatsApp Chat
-      </a>
-
-      <a href="mailto:raghavdixit778@gmail.com?subject=CNC Work Enquiry&body=Hello Udai Enterprises," class="contact-btn btn-mail">
-        <span class="icon-space">✉️</span> Email Raghav
-      </a>
-
-      <a href="https://forms.gle/oKrKreYaC99saecPA" class="contact-btn btn-form" target="_blank">
-        <span class="icon-space">📋</span> Upload Design (Google Form)
-      </a>
-
-      <p style="margin-top: 25px; font-weight: bold; color: var(--primary);">Phone: 8726090909</p>
+    <div class="hero">
+        <h1>LET'S TALK BUSINESS</h1>
     </div>
-  </div>
-
-  <footer>
-    <p>180, Indrapuri Bhuwana, Udaipur</p>
-  </footer>
-
+    
+    <div class="contact-box">
+        <h2 style="color: #ccc;">Start Your Project</h2>
+        <p style="color: #666; margin-bottom: 30px;">Direct Access to Shyam (Founder & Engineer)</p>
+        
+        <a href="https://wa.me/918726090909" class="btn-wa">💬 Chat on WhatsApp</a>
+        <a href="tel:+918726090909" class="btn-call">📞 Call Now: 8726090909</a>
+        
+        <p style="margin-top: 30px; font-size: 0.9em; color: #555;">📍 180, Indrapuri Bhuwana, Udaipur (Raj.)</p>
+    </div>
 </body>
 </html>
