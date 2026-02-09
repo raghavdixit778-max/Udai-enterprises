@@ -1,78 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services - UDAI ENTERPRISES</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #6b4c26; --accent: #fbd080; --bg: #fff8f0; }
-    body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; text-align: center; }
-    header { background: linear-gradient(135deg, var(--primary), #8b5a2b); color: white; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-    nav a { color: var(--accent); margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
-    
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 20px; max-width: 1200px; margin: auto; }
-    
-    .card { background: white; padding: 40px 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border-bottom: 6px solid var(--primary); transition: 0.4s; position: relative; }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-    
-    .card h3 { color: var(--primary); font-size: 1.6em; margin-bottom: 15px; }
-    .card p { color: #666; font-size: 1em; line-height: 1.6; margin-bottom: 25px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Udai Enterprises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; font-family: 'Poppins', sans-serif; background: #fff8f0; color: #333; }
 
-    /* Connecting Button */
-    .view-gallery-btn { 
-        background: transparent; 
-        color: var(--primary); 
-        border: 2px solid var(--primary); 
-        padding: 10px 20px; 
-        text-decoration: none; 
-        border-radius: 50px; 
-        font-weight: bold; 
-        font-size: 0.9em;
-        transition: 0.3s;
-    }
-    .view-gallery-btn:hover { background: var(--primary); color: white; }
+        /* Header Parallax */
+        .page-header {
+            background-image: url('https://s3.ap-south-1.amazonaws.com/images.woodenstreet.de/image/data/blog-images/cnc-cutting-design/modern-cnc-designs.jpg');
+            height: 40vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .header-title {
+            background: #fff; padding: 20px 60px;
+            font-size: 2em; font-weight: 800; letter-spacing: 2px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            color: #6b4c26;
+        }
 
-    footer { background: var(--primary); color: white; padding: 30px; margin-top: 50px; }
-  </style>
+        nav { background: #6b4c26; padding: 15px; text-align: center; }
+        nav a { color: #fbd080; text-decoration: none; margin: 0 20px; font-weight: bold; }
+
+        .service-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; padding: 60px 20px; max-width: 1200px; margin: auto;
+        }
+
+        .card {
+            background: white; padding: 40px; border-radius: 20px;
+            text-align: center; transition: 0.4s;
+            border: 1px solid #eee; position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(107, 76, 38, 0.2);
+            border-bottom: 5px solid #00d4ff;
+        }
+
+        .icon { font-size: 50px; margin-bottom: 20px; }
+        h3 { color: #6b4c26; font-size: 1.5em; }
+        p { color: #666; line-height: 1.6; }
+        
+        .btn {
+            display: inline-block; margin-top: 20px; padding: 10px 25px;
+            background: #6b4c26; color: white; text-decoration: none;
+            border-radius: 50px; font-weight: bold; transition: 0.3s;
+        }
+        .btn:hover { background: #00d4ff; color: #000; }
+    </style>
 </head>
 <body>
-
-  <header>
-    <h1>UDAI ENTERPRISES</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html" style="color:white; border-bottom: 2px solid white;">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
+        <a href="index.html">HOME</a>
+        <a href="services.html" style="color:white;">SERVICES</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="contact.html">CONTACT</a>
     </nav>
-  </header>
 
-  <h2 style="margin-top: 50px; color: var(--primary); font-size: 2.5em;">Our Expert Services</h2>
-  
-  <div class="services-grid">
-    <div class="card">
-      <h3>CNC Cutting</h3>
-      <p>Precision cutting on MDF, WPC, PVC and ACP sheets with latest machinery.</p>
-      <a href="gallery.html" class="view-gallery-btn">View CNC Designs →</a>
+    <div class="page-header">
+        <div class="header-title">WHAT WE DO</div>
     </div>
 
-    <div class="card">
-      <h3>3D Door Carving</h3>
-      <p>High-quality 3D wood carving for main doors, puja rooms, and luxury interiors.</p>
-      <a href="gallery.html" class="view-gallery-btn">View Door Designs →</a>
+    <div class="service-container">
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>CNC Cutting (2D/3D)</h3>
+            <p>High-precision cutting for MDF, WPC, PVC, and Acrylic sheets. Best for Jaali and partitions.</p>
+            <a href="contact.html" class="btn">Get Quote</a>
+        </div>
+        <div class="card">
+            <div class="icon">🚪</div>
+            <h3>3D Door Carving</h3>
+            <p>Premium quality wooden door designs. Transform plain doors into royal entrances.</p>
+            <a href="contact.html" class="btn">Get Quote</a>
+        </div>
+        <div class="card">
+            <div class="icon">🏛️</div>
+            <h3>Mandir & Temples</h3>
+            <p>Custom-made Mandir designs with intricate detailing and Om/Swastik patterns.</p>
+            <a href="contact.html" class="btn">Get Quote</a>
+        </div>
     </div>
-
-    <div class="card">
-      <h3>Designer Jaali</h3>
-      <p>Customized jaali work for partitions, ceilings, and decorative panels.</p>
-      <a href="gallery.html" class="view-gallery-btn">View Jaali Gallery →</a>
-    </div>
-  </div>
-
-  <footer>
-    <p>180, Indrapuri Bhuwana, Udaipur | 8726090909</p>
-  </footer>
-
 </body>
 </html>
