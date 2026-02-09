@@ -1,138 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UDAI ENTERPRISES | Premium CNC Art</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #6b4c26; --accent: #fbd080; --white: #ffffff; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDAI ENTERPRISES | Mr.Shyam's Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --primary: #4a3319; 
+            --accent: #fbd080; 
+            --white: #ffffff;
+            --jarvis-glow: #00d4ff;
+        }
 
-    body, html { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background-color: #fff8f0; }
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fff8f0;
+            overflow-x: hidden;
+        }
 
-    /* Navigation */
-    header { background: rgba(107, 76, 38, 0.95); padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-    nav { text-align: center; }
-    nav a { color: var(--accent); text-decoration: none; margin: 0 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        /* Navigation */
+        header {
+            background: rgba(45, 30, 15, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%; top: 0; z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        nav { text-align: center; }
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 1.5px;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--white); text-shadow: 0 0 10px var(--accent); }
 
-    /* PARALLAX WALLPAPER 1 */
-    .parallax-bg-1 {
-      background-image: url('https://s3.ap-south-1.amazonaws.com/images.woodenstreet.de/image/data/blog-images/cnc-cutting-design/jali-cnc-cutting-design.jpg');
-      height: 100vh;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        /* PARALLAX SECTIONS */
+        .parallax {
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        /* Pehli Parallax Image */
+        .bg-1 { background-image: url('https://s3.ap-south-1.amazonaws.com/images.woodenstreet.de/image/data/blog-images/cnc-cutting-design/modern-cnc-designs.jpg'); }
+        
+        /* Doosri Parallax Image */
+        .bg-2 { 
+            background-image: url('https://s3.ap-south-1.amazonaws.com/images.woodenstreet.de/image/data/blog-images/cnc-cutting-design/jali-cnc-cutting-design.jpg'); 
+            height: 70vh; 
+        }
 
-    /* PARALLAX WALLPAPER 2 (Jo pehle nahi aa rahi thi) */
-    .parallax-bg-2 {
-      background-image: url('https://s3.ap-south-1.amazonaws.com/images.woodenstreet.de/image/data/blog-images/cnc-cutting-design/modern-cnc-designs.jpg');
-      height: 450px;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-top: 10px solid var(--accent);
-      border-bottom: 10px solid var(--accent);
-    }
+        .hero-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px;
+            border-radius: 20px;
+            color: var(--white);
+            backdrop-filter: blur(8px);
+            border: 2px solid var(--accent);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-    .hero-text {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px 50px;
-      border-radius: 15px;
-      text-align: center;
-      color: var(--white);
-      backdrop-filter: blur(8px);
-      border: 2px solid var(--accent);
-    }
+        .hero-box h1 { font-size: 3.5em; margin: 0; letter-spacing: 5px; color: var(--accent); }
+        .hero-box p { font-size: 1.3em; margin-top: 10px; }
 
-    .content-area { padding: 100px 20px; background: var(--white); text-align: center; }
+        /* Content Sections */
+        .section { padding: 100px 20px; text-align: center; background: white; }
+        .section h2 { color: var(--primary); font-size: 2.8em; margin-bottom: 25px; font-weight: 800; }
+        .section p { max-width: 800px; margin: auto; line-height: 1.8; color: #444; font-size: 1.1em; }
 
-    /* WHATSAPP BUTTON STYLE */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 40px;
-      background-color: #25d366;
-      color: #FFF;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-      z-index: 10000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #128c7e;
-    }
-    .whatsapp-float span {
-      position: absolute;
-      right: 70px;
-      background: #25d366;
-      padding: 5px 15px;
-      border-radius: 5px;
-      font-size: 14px;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transition: 0.3s;
-    }
-    .whatsapp-float:hover span { opacity: 1; }
+        /* JARVIS UI */
+        #jarvis-container {
+            position: fixed; bottom: 110px; right: 30px;
+            width: 330px; background: #0a0a0a;
+            border: 2px solid var(--jarvis-glow);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+            display: none; z-index: 10000;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            animation: slideUp 0.5s ease;
+        }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-    footer { background: var(--primary); color: var(--white); padding: 40px; text-align: center; }
-  </style>
+        .jarvis-header {
+            background: #111; color: var(--jarvis-glow);
+            padding: 18px; font-weight: bold;
+            display: flex; justify-content: space-between;
+            border-bottom: 1px solid var(--jarvis-glow);
+        }
+        .jarvis-screen {
+            height: 280px; padding: 15px;
+            overflow-y: auto; background: #000;
+            color: var(--jarvis-glow); font-size: 0.9em;
+            scrollbar-width: thin; scrollbar-color: var(--jarvis-glow) #000;
+        }
+        .jarvis-input-area { padding: 12px; display: flex; background: #111; gap: 8px; }
+        #user-query {
+            flex: 1; background: #000; color: var(--jarvis-glow);
+            border: 1px solid var(--jarvis-glow); padding: 10px;
+            border-radius: 8px; outline: none;
+        }
+        .send-btn {
+            background: var(--jarvis-glow); color: #000;
+            border: none; padding: 10px 18px;
+            cursor: pointer; font-weight: bold; border-radius: 8px;
+        }
+        .brain-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 75px; height: 75px; background: #000;
+            border: 2px solid var(--jarvis-glow);
+            border-radius: 50%; display: flex;
+            align-items: center; justify-content: center;
+            cursor: pointer; z-index: 10001;
+            box-shadow: 0 0 20px var(--jarvis-glow);
+            transition: 0.4s;
+        }
+        .brain-btn:hover { transform: scale(1.15) rotate(10deg); }
+        
+        .msg { margin-bottom: 15px; line-height: 1.4; }
+        .user-msg { color: #fff; text-align: right; border-right: 2px solid #fff; padding-right: 8px; }
+
+        footer { background: var(--primary); color: white; padding: 50px; text-align: center; border-top: 5px solid var(--accent); }
+
+        @media (max-width: 768px) {
+            .hero-box h1 { font-size: 2em; }
+            #jarvis-container { width: 90%; right: 5%; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-  <div class="parallax-bg-1">
-    <div class="hero-text">
-      <h1>UDAI ENTERPRISES</h1>
-      <p>Mastering the Art of Wood & CNC</p>
+    <div class="parallax bg-1">
+        <div class="hero-box">
+            <h1>UDAI ENTERPRISES</h1>
+            <p>Mastering CNC Precision & Wood Artistry</p>
+            <div style="margin-top:20px; height:2px; background:var(--accent); width:100px; margin-inline:auto;"></div>
+        </div>
     </div>
-  </div>
 
-  <div class="content-area">
-    <h2 style="color: var(--primary);">Udaipur's Best CNC Workshop</h2>
-    <p style="max-width: 800px; margin: auto;">Hum WPC, MDF, aur Lakdi par 3D designs aur Jaali ka kaam poori perfection ke saath karte hain.</p>
-  </div>
-
-  <div class="parallax-bg-2">
-    <div class="hero-text">
-      <h2>Precision. Quality. Trust.</h2>
+    <div class="section">
+        <h2>Premium 3D Wood Carving</h2>
+        <p>
+            Welcome to Udaipur's most advanced CNC design studio. We specialize in transforming simple MDF, WPC, and Solid Wood into architectural masterpieces using state-of-the-art machinery.
+        </p>
     </div>
-  </div>
 
-  <a href="https://wa.me/918726090909?text=Hello!%20I%20want%20to%20enquire%20about%20CNC%20Designs." class="whatsapp-float" target="_blank">
-    <span>Chat with Raghav</span>
-    <strong>W</strong> </a>
+    <div class="parallax bg-2">
+        <div class="hero-box">
+            <h2 style="font-size: 2.5em; margin:0;">Intricate Jaali Designs</h2>
+            <p>Perfect for Mandirs, Partitions & Ceilings</p>
+        </div>
+    </div>
 
-  <footer>
-    <p>180, Indrapuri Bhuwana, Udaipur | 8726090909</p>
-  </footer>
+    <div class="section" style="background: #fff8f0;">
+        <h2>Visit Udai Enterprises</h2>
+        <p>180, Indrapuri Bhuwana, Udaipur, Rajasthan</p>
+        <p style="font-weight: bold; color: var(--primary); margin-top: 10px; font-size: 1.4em;">+91 8726090909</p>
+    </div>
 
+    <div class="brain-btn" onclick="toggleJarvis()">
+        <span style="font-size: 38px; filter: drop-shadow(0 0 5px var(--jarvis-glow));">🧠</span>
+    </div>
+
+    <div id="jarvis-container">
+        <div class="jarvis-header">
+            <span>JARVIS v2.0</span>
+            <span onclick="toggleJarvis()" style="cursor:pointer; color: #ff4d4d;">[DISCONNECT]</span>
+        </div>
+        <div class="jarvis-screen" id="jarvis-screen">
+            <div class="msg">
+                <strong>JARVIS:</strong> [SYSTEM BOOTING...]<br>
+                Core Intelligence Online.<br><br>
+                <strong>Welcome Sir,How Can I Assist You?</strong><br>
+                All systems at Udai Enterprises are stable. How shall we proceed with the designs today, Sir?
+            </div>
+        </div>
+        <div id="status" style="font-size: 0.7em; color: var(--jarvis-glow); padding: 0 15px; display: none; margin-bottom: 5px;">Analyzing query...</div>
+        <div class="jarvis-input-area">
+            <input type="text" id="user-query" placeholder="Enter command for Jarvis..." onkeypress="if(event.key==='Enter')processQuery()">
+            <button class="send-btn" onclick="processQuery()">RUN</button>
+        </div>
+        <div style="background: #000; padding: 8px; text-align: center; border-top: 1px solid #222;">
+            <a href="https://wa.me/918726090909" style="color: var(--accent); text-decoration: none; font-size: 0.8em; font-weight: bold;" target="_blank">>> UPLINK TO Udai Enterprises (WHATSAPP)</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Developed for Udai Enterprises | © All Rights Reserved</p>
+        <p style="font-size: 0.8em; opacity: 0.7; margin-top: 10px;">&copy; 2026 Udaipur, Rajasthan</p>
+    </footer>
+
+    <script>
+        // Jarvis Intelligence Logic
+        const brainData = {
+            "hello": "Welcome Sir! Shall we analyze new CNC patterns?",
+            "hi": "Welcome Sir! Personal AI assistant JARVIS online. Ready for your instructions.",
+            "price": "Analyzing market data... CNC cutting starts at ₹40/sqft for MDF. Sir, should I prepare a cost estimate for the client?",
+            "rate": "Current optimization: ₹40 to ₹150 per sqft. Sir, I have flagged special discounts for bulk Jaali orders.",
+            "location": "GPS Lock: 180, Indrapuri Bhuwana, Udaipur. The workshop is currently visible on all global maps.",
+            "material": "Sensors detect high-quality MDF, WPC, PVC, and Solid Teak in the workshop. All units ready for carving.",
+            "design": "Accessing the 3D Design Vault... 1000+ files found. Shall I display the premium Jaali collection, Sir?",
+            "raghav": "Mr. Raghav Dixit is the Chief Engineer and visionary behind Udai Enterprises. I am his primary AI interface.",
+        };
+
+        function toggleJarvis() {
+            const box = document.getElementById('jarvis-container');
+            box.style.display = (box.style.display === 'none' || box.style.display === '') ? 'block' : 'none';
+        }
+
+        function processQuery() {
+            const inputField = document.getElementById('user-query');
+            const query = inputField.value.toLowerCase().trim();
+            const screen = document.getElementById('jarvis-screen');
+            const status = document.getElementById('status');
+
+            if (query === "") return;
+
+            // User Display
+            screen.innerHTML += `<div class="msg user-msg"><strong>YOU:</strong> ${inputField.value}</div>`;
+            inputField.value = "";
+            screen.scrollTop = screen.scrollHeight;
+
+            // Jarvis Processing
+            status.style.display = "block";
+
+            setTimeout(() => {
+                status.style.display = "none";
+                let response = "Sir, my database is inconclusive on this query. Suggesting manual intervention by you.";
+                
+                for (let key in brainData) {
+                    if (query.includes(key)) {
+                        response = brainData[key];
+                        break;
+                    }
+                }
+
+                screen.innerHTML += `<div class="msg"><strong>JARVIS:</strong> ${response}</div>`;
+                screen.scrollTop = screen.scrollHeight;
+            }, 1100);
+        }
+
+        // Automatic System Boot after 4 seconds
+        window.onload = () => {
+            setTimeout(() => {
+                const box = document.getElementById('jarvis-container');
+                if(box.style.display === 'none' || box.style.display === '') {
+                    toggleJarvis();
+                }
+            }, 4000);
+        };
+    </script>
 </body>
 </html>
-
