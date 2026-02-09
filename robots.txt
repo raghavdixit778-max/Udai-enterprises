@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://raghavdixit778-max.github.io/Udai-enterprises/sitemap.xml
