@@ -1,109 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery - UDAI ENTERPRISES</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --primary: #6b4c26; --accent: #fbd080; --bg: #fff8f0; }
-    body { font-family: 'Poppins', sans-serif; background: var(--bg); margin: 0; text-align: center; color: #333; }
-    
-    header { background: linear-gradient(135deg, var(--primary), #8b5a2b); color: white; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-    nav { margin-top: 15px; }
-    nav a { color: var(--accent); margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9em; }
-    nav a:hover { color: white; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Udai Enterprises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; font-family: 'Poppins', sans-serif; background: #1a1a1a; color: white; }
+        
+        /* Header Parallax */
+        .page-header {
+            background-image: url('https://s3.ap-south-1.amazonaws.com/images.woodenstreet.de/image/data/blog-images/cnc-cutting-design/modern-cnc-designs.jpg');
+            height: 50vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            display: flex; align-items: center; justify-content: center;
+            border-bottom: 5px solid #fbd080;
+        }
+        .header-title {
+            background: rgba(0,0,0,0.7); padding: 30px 50px; border: 2px solid #fbd080;
+            text-transform: uppercase; letter-spacing: 5px; font-size: 2.5em; backdrop-filter: blur(5px);
+        }
 
-    .gallery-container { padding: 50px 20px; max-width: 1200px; margin: auto; }
-    .gallery-container h2 { color: var(--primary); font-size: 2.5em; margin-bottom: 40px; }
-    
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    
-    /* Image Styling */
-    .gallery-item { position: relative; overflow: hidden; border-radius: 15px; background: white; border: 8px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); height: 350px; cursor: pointer; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
-    .gallery-item:hover img { transform: scale(1.1); filter: brightness(0.7); }
+        /* Navigation */
+        nav { background: #000; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+        nav a { color: #fbd080; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 1.1em; transition: 0.3s; }
+        nav a:hover { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; }
 
-    /* Caption Overlay */
-    .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(107, 76, 38, 0.85); color: white; padding: 15px; transform: translateY(100%); transition: 0.4s ease; }
-    .gallery-item:hover .overlay { transform: translateY(0); }
-    .overlay h3 { margin: 0; font-size: 1.2em; color: var(--accent); }
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+            max-width: 1200px; margin: auto;
+        }
 
-    footer { background: var(--primary); color: white; padding: 30px; margin-top: 50px; }
-  </style>
+        .img-card {
+            background: #222; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.4s; border: 1px solid #333;
+            position: relative;
+        }
+
+        .img-card:hover { transform: translateY(-10px) scale(1.02); border-color: #00d4ff; box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+
+        .img-card img { width: 100%; height: 250px; object-fit: cover; transition: 0.5s; }
+        .img-card:hover img { opacity: 0.8; }
+
+        .desc { padding: 15px; text-align: center; color: #ccc; }
+        .desc h3 { color: #fbd080; margin: 0; }
+
+        footer { text-align: center; padding: 30px; background: #000; color: #555; }
+    </style>
 </head>
 <body>
-
-  <header>
-    <h1>UDAI ENTERPRISES</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html" style="color:white; border-bottom: 2px solid white;">Gallery</a>
-      <a href="contact.html">Contact</a>
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="gallery.html" style="color:white; border-bottom: 2px solid #00d4ff;">GALLERY</a>
+        <a href="contact.html">CONTACT</a>
     </nav>
-  </header>
 
-  <div class="gallery-container">
-    <h2>CNC Cutting Design Showcase</h2>
-    <div class="gallery-grid">
-      
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/7b/b7/6c/7bb76c890ef7d320ae91849779b9cdf1.jpg" alt="CNC Jaali Design">
-        <div class="overlay">
-          <h3>Decorative Jaali</h3>
-          <p>MDF & PVC Partition Designs</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://5.imimg.com/data5/SELLER/Default/2024/6/430843320/RD/BM/EP/6462058/mdf-3d-door-panel-2.jpeg" alt="3D Door Carving">
-        <div class="overlay">
-          <h3>3D Door Carving</h3>
-          <p>Premium Solid Wood Designs</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://5.imimg.com/data5/JZ/SX/CK/SELLER-25407571/designer-wall-panel-mdf-500x500.jpg" alt="CNC Wall Panel">
-        <div class="overlay">
-          <h3>Wall Paneling</h3>
-          <p>Modern Living Room CNC Work</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://5.imimg.com/data5/SELLER/Default/2024/10/461783843/GX/QM/FC/225711479/polywood-pvc-door-500x500.jpg" alt="Mandir Jaali">
-        <div class="overlay">
-          <h3>Temple Jaali</h3>
-          <p>Corian & Acrylic CNC Designs</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://5.imimg.com/data5/ANDROID/Default/2022/10/GU/MV/JY/4275809/product-jpeg.jpg" alt="CNC">
-        <div class="overlay">
-          <h3>Ceiling Design</h3>
-          <p>Designer False Ceiling Panels</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://i.pinimg.com/736x/f8/c4/ee/f8c4ee87ff5cea2d3489104ea9d921dd.jpg" alt="Furniture CNC">
-        <div class="overlay">
-          <h3>Furniture Art</h3>
-          <p>Custom Engraving on Cabinets</p>
-        </div>
-      </div>
-
+    <div class="page-header">
+        <div class="header-title">Masterpiece Collection</div>
     </div>
-  </div>
 
-  <footer>
-    <p>180, Indrapuri Bhuwana, Udaipur | Phone: 8726090909</p>
-    <p>&copy; 2026 Udai Enterprises. Quality Woodwork & CNC.</p>
-  </footer>
+    <div class="gallery-grid">
+        <div class="img-card">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2024/6/430843320/RD/BM/EP/6462058/mdf-3d-door-panel-2.jpeg">
+            <div class="desc"><h3>3D Door Carving</h3><p>Solid Teak Wood</p></div>
+        </div>
+        <div class="img-card">
+            <img src="https://s3.ap-south-1.amazonaws.com/images.woodenstreet.de/image/data/blog-images/cnc-cutting-design/jali-cnc-cutting-design.jpg">
+            <div class="desc"><h3>Geometric Jaali</h3><p>MDF Partition</p></div>
+        </div>
+        <div class="img-card">
+            <img src="https://m.media-amazon.com/images/I/71GONnNkSeL._AC_UF350,350_QL80_.jpg">
+            <div class="desc"><h3>Mandir</h3><p>Custom Size</p></div>
+        </div>
+        <div class="img-card">
+            <img src="https://5.imimg.com/data5/ANDROID/Default/2022/10/GU/MV/JY/4275809/product-jpeg.jpg">
+            <div class="desc"><h3>Ceiling Art</h3><p>WPC Waterproof</p></div>
+        </div>
+        <div class="img-card">
+            <img src="https://i.pinimg.com/474x/eb/66/8d/eb668df3125fb3c822d76dc9a26a2b6c.jpg">
+            <div class="desc"><h3>Modern Art</h3><p>Wall Decor</p></div>
+        </div>
+        <div class="img-card">
+            <img src="https://i.pinimg.com/236x/0a/29/7f/0a297fd9a69c37a976d5ce6356e5a321.jpg">
+            <div class="desc"><h3>Office Partition</h3><p>High Density MDF</p></div>
+        </div>
+    </div>
 
+    <footer>&copy; 2026 Udai Enterprises | Designed by Raghav</footer>
 </body>
-</html>		
+</html>
