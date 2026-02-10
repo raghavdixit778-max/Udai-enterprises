@@ -214,65 +214,7 @@
         <p style="font-size: 0.8em; opacity: 0.7; margin-top: 10px;">&copy; 2026 Udaipur, Rajasthan</p>
     </footer>
 
-    <script>
-        // Jarvis Intelligence Logic
-        const brainData = {
-            "hello": "Welcome Sir! Shall we analyze new CNC patterns?",
-            "hi": "Hello Sir! Personal AI assistant JARVIS online. Ready for your instructions.",
-            "price": "Analyzing market data... CNC cutting starts at ₹40/sqft for MDF. Sir, should I prepare a cost estimate for the client?",
-            "rate": "Current optimization: ₹40 to ₹150 per sqft.Sir, I have flagged special discounts for bulk Jaali orders.",
-            "location": "GPS Lock: 180, Indrapuri Bhuwana, Udaipur. The workshop is currently visible on all global maps.",
-            "material": "Sensors detect high-quality MDF, WPC, PVC, and Solid Teak in the workshop. All units ready for carving.",
-            "design": "Accessing the 3D Design Vault... 1000+ files found. Shall I display the premium Jaali collection, Sir?",
-            "raghav": "Mr. Raghav Dixit is the Chief Engineer and visionary behind Udai Enterprises. I am his primary AI interface.",
-        };
 
-        function toggleJarvis() {
-            const box = document.getElementById('jarvis-container');
-            box.style.display = (box.style.display === 'none' || box.style.display === '') ? 'block' : 'none';
-        }
-
-        function processQuery() {
-            const inputField = document.getElementById('user-query');
-            const query = inputField.value.toLowerCase().trim();
-            const screen = document.getElementById('jarvis-screen');
-            const status = document.getElementById('status');
-
-            if (query === "") return;
-
-            // User Display
-            screen.innerHTML += `<div class="msg user-msg"><strong>YOU:</strong> ${inputField.value}</div>`;
-            inputField.value = "";
-            screen.scrollTop = screen.scrollHeight;
-
-            // Jarvis Processing
-            status.style.display = "block";
-
-            setTimeout(() => {
-                status.style.display = "none";
-                let response = "Sir, my database is inconclusive on this query. Suggesting manual intervention by you.";
-                
-                for (let key in brainData) {
-                    if (query.includes(key)) {
-                        response = brainData[key];
-                        break;
-                    }
-                }
-
-                screen.innerHTML += `<div class="msg"><strong>JARVIS:</strong> ${response}</div>`;
-                screen.scrollTop = screen.scrollHeight;
-            }, 1100);
-        }
-
-        // Automatic System Boot after 4 seconds
-        window.onload = () => {
-            setTimeout(() => {
-                const box = document.getElementById('jarvis-container');
-                if(box.style.display === 'none' || box.style.display === '') {
-                    toggleJarvis();
-                }
-            }, 4000);
-        };
-    </script>
 </body>
 </html>
+
